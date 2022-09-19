@@ -184,7 +184,7 @@
 % \usepackage[scaled=0.9]{helvet}
 % \usepackage{courier}
 
-\title{Closing Remarks}
+\title[Drug repurposing for COVID-19 with Real World Evidence]{Drug repurposing for COVID-19 using explainable machine learning and mechanistic models of signal transduction circuits related to SARS-CoV-2 infection with real world data validation}
 \author{Carlos Loucera}
 \institute{
 	Bioinformatics Area, Andalusian Public Foundation Progress and Health-FPS, 41013 Sevilla, Spain \\
@@ -218,15 +218,14 @@
 	\addtocounter{framenumber}{-1} 
 \end{frame}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\section{Introduction}
 \begin{frame}{Knowledge discovery}
 
 	\textbf{Living Contradiction} is a fascinating, honest examination of that genuine contradiction faced 
 	by teachers in reconciling the effort made to \emph{encourage} young people towards \emph{independent 
 	critical thinking}, with the simultaneous sense of \emph{responsibility to instruct} and insist 
-	on a particular behaviour. \\
+	on a particular behavior. \\
 
 	\vspace*{1em}
 
@@ -239,6 +238,95 @@
 	\blfootnote{\url{https://www.crownhouse.co.uk/product-review/10842}}
 
 \end{frame}
+
+\section{Methods}
+
+
+
+\begin{frame}{COVID19}
+	\begin{columns}
+
+		\begin{column}{0.4\textwidth}
+			\centering
+			\includegraphics[width=0.8\textwidth]{fig/covipathia.png}
+			\captionof{figure}{COVID-19 Disease Map\footnotemark }
+
+		\end{column}
+		\pause
+		\begin{column}{0.6\textwidth}
+			\centering
+			\includegraphics[width=0.8\textwidth]{fig/loucera_covid_rep.jpg}
+			\captionof{figure}{Reposicionamiento de fármacos\footnotemark}
+		\end{column}
+	\end{columns}
+	\footnotetext[1]{\fullcite{rian2021mechanistic}}
+\end{frame}
+
+
+\begin{frame}{xML Drug repurposing}
+	\begin{columns}
+		\column{0.99\textwidth}
+		\begin{figure}
+			\includegraphics[width=0.99\textwidth]{figs/methods/COVI-19_drugRepo.png}
+		\end{figure}
+
+	\end{columns}
+\end{frame}
+
+
+\section{Results}
+
+\begin{frame}{Covariate-Adjusted LHR by Treatment}
+	\begin{columns}
+		\column{0.8\textwidth}
+		\begin{figure}
+			\includegraphics[width=0.94\textwidth]{figs/results/bps_covid_repurposing_summary.pdf}
+		\end{figure}
+
+		\column{0.2\textwidth}
+		\begin{figure}
+			\includegraphics[width=0.7\textwidth]{figs/logos/bps.png}	
+		\end{figure}
+
+		\begin{figure}
+			\includegraphics[width=0.7\textwidth]{figs/logos/logo-vectorizado-crop.pdf}	
+		\end{figure}
+
+	\end{columns}
+\end{frame}
+
+
+\begin{frame}{Covariate-Adjusted LHR by Treatment}
+	\begin{columns}
+		\column{0.99\textwidth}
+		\begin{figure}
+			\includegraphics[width=0.88\textwidth]{figs/results/bps_covid_repurposing_summary.pdf}
+		\end{figure}
+
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Covariate-Adjusted Lymphocyte trend}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{figure}
+			\includegraphics[width=0.8\textwidth]{figs/results/db00695_furosemide_lymphocite_progression.pdf}	
+		\end{figure}
+
+		\column{0.5\textwidth}
+		\begin{figure}
+			\includegraphics[width=0.8\textwidth]{figs/results/db00146_calcifediol_lymphocite_progression.pdf}	
+		\end{figure}
+
+	\end{columns}
+
+	\begin{figure}
+		\includegraphics[width=0.4\textwidth]{figs/results/db09258_bemiparin_lymphocite_progression.pdf}	
+	\end{figure}
+
+
+\end{frame}
+
 
 \section{Thanks}
 
