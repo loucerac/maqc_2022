@@ -1,0 +1,373 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = en_US
+
+\documentclass[compress,ignorenonframetext,aspectratio=1610]{beamer}
+\usepackage[USenglish]{babel}
+\usepackage[utf8]{inputenc}
+\usetheme{Cantabria}
+\usepackage{url}
+\usepackage{xfrac}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage[ruled]{algorithm2e}
+\usepackage{graphicx}
+\usepackage{alphabeta}
+\usepackage{textcomp}
+
+
+\usepackage[ruled]{algorithm2e}
+\usepackage{subfig}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{svg}
+
+\usepackage{calc}  
+\usepackage{enumitem}  
+\usepackage[compatibility=false]{caption}
+\usepackage{textcomp}
+\usepackage{ulem}
+\usepackage{listings}
+\usepackage{multimedia}
+\usepackage{subfig}
+\usepackage{svg}
+\usepackage[export]{adjustbox}
+
+\setbeamerfont{footnote}{size=\tiny}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{\tiny{#1}}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+% \captionsetup{compatibility=false}
+
+
+\def\xrow{
+	\begin{bmatrix}
+    x_1 & x_2 & \cdots & x_m
+\end{bmatrix}}
+
+\def\xsrow{
+	\begin{bmatrix}
+    \mathbf{X}_{:,1} & \mathbf{X}_{:,2} & \cdots & \mathbf{X}_{:,m}
+\end{bmatrix}}
+
+\def\xcol{
+\begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    \vdots \\
+    x_m
+\end{bmatrix}}
+
+\def\xscol{
+\begin{bmatrix}
+    \mathbf{X}_1 \\
+    \mathbf{X}_2 \\
+    \vdots \\
+    \mathbf{X}_m
+\end{bmatrix}}
+
+\def\xmat{
+	\begin{bmatrix}
+		X_{1,1} & X_{1,2} & \cdots & X_{1,n} \\
+		X_{2,1} & X_{2,2} & \cdots & X_{2,n} \\
+		\vdots  & \vdots  & \ddots & \vdots  \\
+		X_{m,1} & X_{m,2} & \cdots & X_{m,n} 
+	\end{bmatrix}
+}
+
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mypy}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\captionsetup[figure]{labelformat=empty}% redefines the caption setup of the figures environment in the beamer class.
+
+
+\usepackage[minnames=1,maxnames=1,style=authoryear,backend=bibtex]{biblatex}
+\addbibresource{bibliography.bib}
+
+\usepackage{pdfpages}
+
+%\newcommand{\textapprox}{\hbox{$\null\approx\,\null$}}
+\newcommand{\textthen}{\hbox{$\null\Rightarrow\,\null$}}
+
+
+\newcommand{\sign}{\operatornamewithlimits{sign}}
+\DeclareMathOperator{\mean}{mean}
+\def\RR{\mathbb{R}}
+\def\ZZ{\mathbb{Z}}
+\def\NN{\mathbb{N}}
+\DeclareMathOperator{\vect}{vec}
+\DeclareMathOperator{\rtwo}{R}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\newcommand\tikzmark[1]{
+  \tikz[remember picture,overlay] \coordinate (#1);
+}
+
+
+\newcommand{\smiley}{\tikz[baseline=-0.75ex,black]{
+		\draw circle (2mm);
+		\node[fill,circle,inner sep=0.5pt] (left eye) at (135:0.8mm) {};
+		\node[fill,circle,inner sep=0.5pt] (right eye) at (45:0.8mm) {};
+		\draw (-145:0.9mm) arc (-120:-60:1.5mm);
+	}
+}
+
+\newcommand{\frownie}{\tikz[baseline=-0.75ex,black]{
+		\draw circle (2mm);
+		\node[fill,circle,inner sep=0.5pt] (left eye) at (135:0.8mm) {};
+		\node[fill,circle,inner sep=0.5pt] (right eye) at (45:0.8mm) {};
+		\draw (-145:0.9mm) arc (120:60:1.5mm);
+	}
+}
+
+\newcommand{\neutranie}{\tikz[baseline=-0.75ex,black]{
+		\draw circle (2mm);
+		\node[fill,circle,inner sep=0.5pt] (left eye) at (135:0.8mm) {};
+		\node[fill,circle,inner sep=0.5pt] (right eye) at (45:0.8mm) {};
+		\draw (-135:0.9mm) -- (-45:0.9mm);
+	}
+}
+
+\newcommand{\tabitem}{%
+  \usebeamertemplate{itemize item}\hspace*{\labelsep}}
+
+\usepackage{mdwlist}
+\usepackage{lmodern}
+
+\addtobeamertemplate{theorem begin}{\normalfont}{}
+
+\usefonttheme[onlymath]{serif}
+
+
+% \useinnertheme{circles}
+% \newenvironment{trienv}{\only{\setbeamertemplate{items}[triangle]}}{}
+% \newenvironment{squareenv}{\only{\setbeamertemplate{items}[square]}}{}
+
+%\defbeamertemplate{itemize item}{circle}{\small\raise0.5pt\hbox{\textbullet}}
+
+% \usepackage{mathptmx}
+% \usepackage[scaled=0.9]{helvet}
+% \usepackage{courier}
+
+\title{Closing Remarks}
+\author{Carlos Loucera}
+\institute{
+	Clinical Bioinformatics Area (Fundaci\'on Progreso y Salud) \\
+	Biomedicine Institue of Seville \\
+	Hospital Virgen del Roc\'io
+}
+\date{Interpretability in Artificial Intelligence (22w5055) \\ 
+2022 May 6}
+
+\begin{document}
+
+% standard title page2
+%\frame[plain]{\titlepage}
+%\setbeamertemplate{footline}{}
+
+% title page with custom logos
+\begin{frame}[plain]
+	\vspace{\stretch{1}} % push title down a little
+	\titlepage % write standard title page
+	\vspace{\stretch{.5}}
+	% vertically center logos with raisebox
+
+	\hspace{\stretch{1}}
+	\raisebox{-0.5\height}{\includegraphics[width=5.5cm]{figs/FPS_Con_pastilla}}
+	\hspace{\stretch{1}}
+	\raisebox{-0.5\height}{\includegraphics[width=3.5cm]{figs/ibi_logo.png}}
+	\hspace{\stretch{1}}
+	\raisebox{-0.5\height}{\includegraphics[width=1.5cm]{figs/logo-vectorizado}}
+	\hspace{\stretch{1}}
+	% \raisebox{-0.5\height}{\includegraphics[width=1.5cm]{figs/US-marca-digital-cuadrada.eps}}
+	\addtocounter{framenumber}{-1} 
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Acknowledgements}
+
+\begin{frame}
+
+	\begin{center}
+		\includegraphics[width=\linewidth]{figs/birs.png}
+	\end{center}
+
+% 	\begin{center}
+% 		\begin{minipage}{0.99\textwidth}
+% 					\begin{itemize}
+% 			\item María Rodríguez Martínez (IBM - Zurich Research Lab)
+% 			\pause
+
+% 			\item Joaquin Dopazo (FPS - Clinical Bioinformatics Area)
+   
+% 			\item An-phi Nguyen (ETH)
+   			
+% 			\item Mara Graziani (IBM Research Zurich Lab)
+			
+% 			\item Davide Cirillo (BSC Computational Biology)
+
+% 		\end{itemize}
+%     \end{minipage}
+% \end{center}
+
+	\begin{center}
+		\begin{tabular}{@{}l@{}}
+		\pause
+		\tabitem María Rodríguez Martínez (IBM - Zurich Research Lab) \\
+		\pause
+		\tabitem Joaquin Dopazo (FPS - Clinical Bioinformatics Area) \\
+		\tabitem An-phi Nguyen (ETH) \\
+		\tabitem Mara Graziani (IBM Research Zurich Lab) \\
+		\tabitem Davide Cirillo (BSC Computational Biology) \\
+		\end{tabular}
+	\end{center}
+\end{frame}
+
+\section{Demystifying AI}
+
+
+\begin{frame}{It was always about the Hype}
+	\begin{columns}
+		\column{0.5\textwidth}
+
+			\begin{figure}
+				\includegraphics[width=0.3\textwidth]{figs/Mark_I_perceptron.jpeg} 	
+				\caption{\tiny{Non-free, \url{https://upload.wikimedia.org/wikipedia/en/5/52/Mark_I_perceptron.jpeg}}}
+
+			\end{figure}
+
+
+		\textbf{The New York Times, 1958} \\
+		
+		\textit{\dots the embryo of an electronic computer that (the Navy) expects will be able to walk, talk, see, write, reproduce itself and be conscious of its existence.}
+		%\vspace{1em}
+		\pause
+		\column{0.5\textwidth}
+
+		%\pause
+
+	%\textit{\dots the embryo of an electronic computer that (the Navy) expects will be able to walk, talk, see, write, reproduce itself and be conscious of its existence.}
+		%\vspace{1em}
+		
+		\textbf{Artificial Intelligence: A Modern Approach [Russell  \& Norvig, 2016]} \\
+
+		\textit{Although airplanes might have been inspired by birds, ornithology has not been the primary driver of aeronautics innovation for some centuries.}
+		\vspace{1em}
+
+		\pause
+
+		\textbf{Dive Deep into Deep Learning [Zhang, Aston, 2021]}\\
+		\textit{Likewise, inspiration in deep learning these days comes in equal or greater measure from mathematics, statistics, and computer science.}
+		
+		\end{columns}
+\end{frame}
+
+
+\begin{frame}{Knowledge discovery}
+
+	\textbf{Living Contradiction} is a fascinating, honest examination of that genuine contradiction faced 
+	by teachers in reconciling the effort made to \emph{encourage} young people towards \emph{independent 
+	critical thinking}, with the simultaneous sense of \emph{responsibility to instruct} and insist 
+	on a particular behaviour. \\
+
+	\vspace*{1em}
+
+	\textbf{Trustworthiness} \\
+
+	\vspace*{1em}
+
+	The \textbf{WHY} is as important as the \textbf{WHAT} \\
+
+	\blfootnote{\url{https://www.crownhouse.co.uk/product-review/10842}}
+
+\end{frame}
+
+\section{Thanks}
+
+	% \begin{frame}{The future}
+
+	% 	\begin{columns}
+
+	% 		\column{0.5\textwidth}
+	% 		\centering\includegraphics[width=0.6\textwidth]{figs/mse_oracle.jpg}
+
+	% 		\column{0.5\textwidth}
+
+	% 		\centering\includegraphics[width=0.8\textwidth]{figs/xkcd_machine_learning.png}
+			
+	% 	\end{columns}
+
+	% 	\blfootnote{\url{https://www.flickr.com/photos/69969104@N00/3351804379/}}
+	% 	\blfootnote{\url{https://xkcd.com/1838/}}
+	% \end{frame}
+
+
+
+	\begin{frame}{}
+		\begin{center}
+			{\fontsize{40}{50}\selectfont Thank You!}
+		\end{center}
+	\end{frame}
+
+	\begin{frame}{}
+		\begin{center}
+		\includegraphics[width=0.55\linewidth]{figs/groupphoto.jpg}
+		\end{center}
+	\end{frame}
+
+
+	\begin{frame}{Personal funding. Contact: \url{carlos.loucera@juntadeandalucia.es}}
+
+		\raisebox{-0.45\height}{\includegraphics[width=5cm]{figs/logo_postdoc_consejeria.jpeg.jpg}}
+		\hspace{\stretch{1}}
+		\raisebox{-0.45\height}{\includegraphics[width=3cm]{figs/logo_postdoc_eu.png}}
+		\hspace{\stretch{1}}
+
+		\vspace{0.3cm}
+
+		Carlos Loucera postdoctoral contract \texttt{PAIDI2020-DOC\_00350} is funded by Junta de Andalucía and co-funded by the European Social Fund (FSE) 2014-2020
+
+		\vspace{0.3cm}
+
+		\begin{center}
+			\raisebox{-0.5\height}{\includegraphics[width=3cm]{figs/logo_postdoc_jdaeu.png}}
+		\end{center}
+	\end{frame}
+
+\end{document}
