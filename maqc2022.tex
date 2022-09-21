@@ -173,6 +173,7 @@
 
 \usefonttheme[onlymath]{serif}
 
+\AtBeginEnvironment{frame}{\setcounter{footnote}{0}}
 
 % \useinnertheme{circles}
 % \newenvironment{trienv}{\only{\setbeamertemplate{items}[triangle]}}{}
@@ -269,6 +270,7 @@
 
 
 \begin{frame}{Mechanistic modeling}
+
 	\begin{columns}
 		\begin{column}{0.6\textwidth}
 			\begin{figure}
@@ -285,6 +287,7 @@
 	\end{columns}
 
 	\pause
+
 	\vspace*{2em}
 	{\normalsize
 		\[
@@ -308,6 +311,64 @@
 
 \section{Results}
 
+\begin{frame}{Data facts}
+
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+			Andalusian public health system
+
+			Year 2020, no COVID-vaccine \\
+
+			15968 COVID-19 hospitalized patients \\
+
+			End point: COVID-19 certified death (28 days) 
+
+			\begin{figure}
+				\includegraphics[width=0.94\textwidth]{figs/results/hospitalizations_timeline.pdf}
+			\end{figure}
+
+		\end{column}
+
+		\begin{column}{0.45\textwidth}
+		\begin{figure}
+			\includegraphics[width=0.99\textwidth]{figs/results/covariates.png}
+		\end{figure}
+
+		\end{column}
+
+
+	\end{columns}
+
+	
+\end{frame}
+
+
+\begin{frame}{Methods Facts}
+
+	We Only include properly balanced treatments\footnotemark \\
+
+	\begin{itemize}
+		\item 964 treatments found
+		\item 122 were eligible
+	\end{itemize}
+	
+	HR Closed-form variance estimator for Weighted Propensity Scores\footnotemark \\
+
+	Lymphocyte count registered up to 14 days since hospitalization begins \\
+
+	Covariate-adjusted linear mixed effect model to test Lymphocyte progression trends
+
+	\begin{itemize}
+		\item 30 treatments are significant for both tests
+		\item 22 after FDR adjustment
+	\end{itemize}
+
+	
+	\footnotetext[1]{\fullcite{hajage2018closed}}
+	\footnotetext[2]{\fullcite{stuart2013prognostic}}
+	
+\end{frame}
+
 \begin{frame}{Covariate-Adjusted LHR by Treatment}
 	\begin{columns}
 		\column{0.8\textwidth}
@@ -327,16 +388,6 @@
 	\end{columns}
 \end{frame}
 
-
-\begin{frame}{Covariate-Adjusted LHR by Treatment}
-	\begin{columns}
-		\column{0.99\textwidth}
-		\begin{figure}
-			\includegraphics[width=0.88\textwidth]{figs/results/bps_covid_repurposing_summary.pdf}
-		\end{figure}
-
-	\end{columns}
-\end{frame}
 
 \begin{frame}{Covariate-Adjusted Lymphocyte trend}
 	\begin{columns}
@@ -358,6 +409,31 @@
 
 
 \end{frame}
+
+
+\begin{frame}{Conclusions}
+	\textbf{Bemiparinand} and \textbf{Enoxaparin} \textrightarrow Highest survival
+	\begin{itemize}
+		\item prevent thrombotic and thromboembolic complications
+		\item enoxaparin has been previously reported as protective
+		\item the protective effect is not shared by other anticoagulants
+	\end{itemize}
+
+	\textbf{Calcifediol} and \textbf{Cholecalciferol} have a protective effect
+	\begin{itemize}
+		\item probably due to vitamin D and its pro-immune and anti-inflammatory properties.
+	\end{itemize}
+
+	There is a \textbf{significative intersection} between \textbf{ML predicted drugs} and \textbf{RWE}
+	\begin{itemize}
+		\item $\chi^{2} = 6.674, \mathtt{p-value} = 0.009785$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Closing remarks}
+	
+\end{frame}
+
 
 
 \section{Thanks}
