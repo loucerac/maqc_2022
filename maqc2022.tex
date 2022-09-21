@@ -1,7 +1,7 @@
 % !TeX encoding = UTF-8
 % !TeX spellcheck = en_US
 
-\documentclass[compress,ignorenonframetext,aspectratio=1610]{beamer}
+\documentclass[compress,ignorenonframetext,aspectratio=1610,handout]{beamer}
 \usepackage[USenglish]{babel}
 \usepackage[utf8]{inputenc}
 \usetheme{Cantabria}
@@ -220,6 +220,20 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
+
+
+\begin{frame}{Knowledge paradigm}
+	\begin{columns}
+		\column{0.99\textwidth}
+		\begin{figure}
+			\includegraphics[width=0.85\textwidth]{figs/methods/knowdge_paradigm-crop.pdf}
+		\end{figure}
+
+	\end{columns}
+\end{frame}
+
+
+
 \begin{frame}{Knowledge discovery}
 
 	\textbf{Living Contradiction} is a fascinating, honest examination of that genuine contradiction faced 
@@ -242,6 +256,25 @@
 \section{Methods}
 
 
+\begin{frame}{Building a COVID-19 Disease Map}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			\centering
+			\includegraphics[width=0.9\textwidth]{figs/methods/covid19-diseasemap-consrtium.jpg}
+			\captionof{figure}{COVID-19 Disease Map\footnotemark }
+
+		\end{column}
+
+		\pause
+
+		\begin{column}{0.4\textwidth}
+
+		\end{column}
+
+	\end{columns}
+	\footnotetext[1]{\fullcite{ostaszewski2021covid19}}
+
+\end{frame}
 
 \begin{frame}{Building a COVID-19 Disease Map}
 	\begin{columns}
@@ -267,6 +300,7 @@
 \end{frame}
 
 
+
 \begin{frame}{Drug repurposing schema}
 	\begin{columns}
 		\column{0.99\textwidth}
@@ -279,25 +313,6 @@
 
 
 \section{Results}
-
-\begin{frame}{Covariate-Adjusted LHR by Treatment}
-	\begin{columns}
-		\column{0.8\textwidth}
-		\begin{figure}
-			\includegraphics[width=0.94\textwidth]{figs/results/bps_covid_repurposing_summary.pdf}
-		\end{figure}
-
-		\column{0.2\textwidth}
-		\begin{figure}
-			\includegraphics[width=0.7\textwidth]{figs/logos/bps.png}	
-		\end{figure}
-
-		\begin{figure}
-			\includegraphics[width=0.7\textwidth]{figs/logos/logo-vectorizado-crop.pdf}	
-		\end{figure}
-
-	\end{columns}
-\end{frame}
 
 
 \begin{frame}{Covariate-Adjusted LHR by Treatment}
