@@ -1,7 +1,7 @@
 % !TeX encoding = UTF-8
 % !TeX spellcheck = en_US
 
-\documentclass[compress,ignorenonframetext,aspectratio=1610]{beamer}
+\documentclass[compress,ignorenonframetext,aspectratio=1610,handout]{beamer}
 \usepackage[USenglish]{babel}
 \usepackage[utf8]{inputenc}
 \usetheme{Cantabria}
@@ -244,6 +244,7 @@
 
 
 \begin{frame}{Building a COVID-19 Disease Map}
+
 	\begin{columns}
 		\begin{column}{0.6\textwidth}
 			\centering
@@ -265,6 +266,26 @@
 	\footnotetext[1]{\fullcite{ostaszewski2021covid19}}
 	\footnotetext[2]{\fullcite{rian2021mechanistic}}
 \end{frame}
+
+
+\begin{frame}{Mechanistic modeling}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\textwidth]{figs/methods/circuit.png}
+	\end{figure}
+
+	\pause
+
+	{\normalsize
+		\[
+			S_{n} = v_{n} \left( 1 - \prod_{s_{a} \in \mathcal{A}} \left( 1 - s_{a} \right) \right) \prod_{s_{i} \in \mathcal{I}} \left( 1 - s_{i} \right)
+		\]
+	}
+
+
+\end{frame}
+
 
 
 \begin{frame}{Drug repurposing schema}
@@ -333,25 +354,6 @@
 
 
 \section{Thanks}
-
-	% \begin{frame}{The future}
-
-	% 	\begin{columns}
-
-	% 		\column{0.5\textwidth}
-	% 		\centering\includegraphics[width=0.6\textwidth]{figs/mse_oracle.jpg}
-
-	% 		\column{0.5\textwidth}
-
-	% 		\centering\includegraphics[width=0.8\textwidth]{figs/xkcd_machine_learning.png}
-			
-	% 	\end{columns}
-
-	% 	\blfootnote{\url{https://www.flickr.com/photos/69969104@N00/3351804379/}}
-	% 	\blfootnote{\url{https://xkcd.com/1838/}}
-	% \end{frame}
-
-
 
 	\begin{frame}{}
 		\begin{center}
