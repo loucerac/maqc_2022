@@ -173,6 +173,7 @@
 
 \usefonttheme[onlymath]{serif}
 
+\AtBeginEnvironment{frame}{\setcounter{footnote}{0}}
 
 % \useinnertheme{circles}
 % \newenvironment{trienv}{\only{\setbeamertemplate{items}[triangle]}}{}
@@ -277,6 +278,7 @@
 \end{frame}
 
 \begin{frame}{Building a COVID-19 Disease Map}
+
 	\begin{columns}
 		\begin{column}{0.6\textwidth}
 			\centering
@@ -300,6 +302,34 @@
 \end{frame}
 
 
+\begin{frame}{Mechanistic modeling}
+
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.99\textwidth]{figs/methods/circuit.png}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.99\textwidth]{figs/methods/hipathia_paper.png}
+			\end{figure}
+		\end{column}
+	\end{columns}
+
+	\pause
+
+	\vspace*{2em}
+	{\normalsize
+		\[
+			S_{n} = v_{n} \left( 1 - \prod_{s_{a} \in \mathcal{A}} \left( 1 - s_{a} \right) \right) \prod_{s_{i} \in \mathcal{I}} \left( 1 - s_{i} \right)
+		\]
+	}
+\end{frame}
+
+
 
 \begin{frame}{Drug repurposing schema}
 	\begin{columns}
@@ -314,16 +344,83 @@
 
 \section{Results}
 
+\begin{frame}{Data facts}
+
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+			Andalusian public health system
+
+			Year 2020, no COVID-vaccine \\
+
+			15968 COVID-19 hospitalized patients \\
+
+			End point: COVID-19 certified death (28 days) 
+
+			\begin{figure}
+				\includegraphics[width=0.94\textwidth]{figs/results/hospitalizations_timeline.pdf}
+			\end{figure}
+
+		\end{column}
+
+		\begin{column}{0.45\textwidth}
+		\begin{figure}
+			\includegraphics[width=0.99\textwidth]{figs/results/covariates.png}
+		\end{figure}
+
+		\end{column}
+
+
+	\end{columns}
+
+	
+\end{frame}
+
+
+\begin{frame}{Methods Facts}
+
+	We Only include properly balanced treatments\footnotemark \\
+
+	\begin{itemize}
+		\item 964 treatments found
+		\item 122 were eligible
+	\end{itemize}
+	
+	HR Closed-form variance estimator for Weighted Propensity Scores\footnotemark \\
+
+	Lymphocyte count registered up to 14 days since hospitalization begins \\
+
+	Covariate-adjusted linear mixed effect model to test Lymphocyte progression trends
+
+	\begin{itemize}
+		\item 30 treatments are significant for both tests
+		\item 22 after FDR adjustment
+	\end{itemize}
+
+	
+	\footnotetext[1]{\fullcite{hajage2018closed}}
+	\footnotetext[2]{\fullcite{stuart2013prognostic}}
+	
+\end{frame}
 
 \begin{frame}{Covariate-Adjusted LHR by Treatment}
 	\begin{columns}
-		\column{0.99\textwidth}
+		\column{0.8\textwidth}
 		\begin{figure}
-			\includegraphics[width=0.88\textwidth]{figs/results/bps_covid_repurposing_summary.pdf}
+			\includegraphics[width=0.94\textwidth]{figs/results/bps_covid_repurposing_summary.pdf}
+		\end{figure}
+
+		\column{0.2\textwidth}
+		\begin{figure}
+			\includegraphics[width=0.7\textwidth]{figs/logos/bps.png}	
+		\end{figure}
+
+		\begin{figure}
+			\includegraphics[width=0.7\textwidth]{figs/logos/logo-vectorizado-crop.pdf}	
 		\end{figure}
 
 	\end{columns}
 \end{frame}
+
 
 \begin{frame}{Covariate-Adjusted Lymphocyte trend}
 	\begin{columns}
@@ -349,24 +446,24 @@
 
 \section{Thanks}
 
-	% \begin{frame}{The future}
+	\textbf{Calcifediol} and \textbf{Cholecalciferol} have a protective effect
+	\begin{itemize}
+		\item probably due to vitamin D and its pro-immune and anti-inflammatory properties.
+	\end{itemize}
 
-	% 	\begin{columns}
+	There is a \textbf{significative intersection} between \textbf{ML predicted drugs} and \textbf{RWE}
+	\begin{itemize}
+		\item $\chi^{2} = 6.674, \mathtt{p-value} = 0.009785$
+	\end{itemize}
+\end{frame}
 
-	% 		\column{0.5\textwidth}
-	% 		\centering\includegraphics[width=0.6\textwidth]{figs/mse_oracle.jpg}
-
-	% 		\column{0.5\textwidth}
-
-	% 		\centering\includegraphics[width=0.8\textwidth]{figs/xkcd_machine_learning.png}
-			
-	% 	\end{columns}
-
-	% 	\blfootnote{\url{https://www.flickr.com/photos/69969104@N00/3351804379/}}
-	% 	\blfootnote{\url{https://xkcd.com/1838/}}
-	% \end{frame}
+\begin{frame}{Closing remarks}
+	
+\end{frame}
 
 
+
+\section{Thanks}
 
 	\begin{frame}{}
 		\begin{center}
