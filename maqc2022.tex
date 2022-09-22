@@ -34,6 +34,7 @@
 \usepackage{subfig}
 \usepackage{svg}
 \usepackage[export]{adjustbox}
+\usepackage[super]{nth}
 
 \setbeamerfont{footnote}{size=\tiny}
 
@@ -195,6 +196,8 @@
 	MAQC 2022 \\ 
 	2022 September 26}
 
+\setbeamertemplate{frametitle}[default][center]
+
 \begin{document}
 
 % standard title page2
@@ -221,6 +224,18 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
+
+\begin{frame}{
+	Infrastructure for secure generation of Real World Evidence from Real World Data from the Andalusian Health Population Database}
+	\begin{columns}
+		\column{0.99\textwidth}
+		\begin{figure}
+			\includegraphics[width=0.85\textwidth]{figs/intro/irwd_esquema.png}
+		\end{figure}
+
+	\end{columns}
+\end{frame}
+
 
 
 \begin{frame}{Knowledge paradigm}
@@ -340,6 +355,105 @@
 
 	\end{columns}
 \end{frame}
+
+
+
+\begin{frame}{Data-driven Validation (Performance + Explanations)}
+	\begin{columns}
+		\column{0.25\textwidth}
+		
+		\column{0.5\textwidth}
+		
+			\begin{block}{Explanation stability}
+				Robustness Vs Stochastic, Noise, Sampling
+				
+				100 Holdout splits of half the sample size
+				
+				Split \textit{training} into \textit{learning} and \textit{validation}
+				
+				Check unbiased performance over \textit{test}
+				
+				Compute Nogueiras\footnotemark statistic test and CI
+				
+			\end{block}
+
+		\column{0.25\textwidth}
+		
+	\end{columns}
+
+	\pause
+	
+	\vspace{1em}%
+	
+	\begin{columns}
+		\column{0.67\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.9\textwidth]{figs/methods/cv_performance_distribution.pdf}
+			\caption{$R^2$ score distribution over the test splits}
+		\end{figure}
+	
+		\column{0.33\textwidth}
+		\texttt{Mean} $R^2$: $0.82 \pm 0.02$
+		
+		\texttt{N-Stat CI}: $(0.729, 0.735)$
+		
+	\end{columns}
+	
+	\footnotetext[1]{\fullcite{nogueira2017stability}}
+
+\end{frame}
+
+
+\begin{frame}
+	
+	\begin{columns}
+		
+		\column{0.5\textwidth}
+		
+		\begin{block}{SHapley Additive exPlanations}
+				Fair feature responsibility attribution.
+				
+				Dis-aggregated by circuit by construction.
+				
+				Additive (use biologically-relevant groups).
+		\end{block}
+	
+		\column{0.5\textwidth}
+		\begin{block}{Template patterns}
+			Conform a series of templates, e.g.:
+			
+			\begin{itemize}
+				\item Affect massively almost all \textsc{Map}
+				\item Affect a few very specific circuits
+			\end{itemize}
+			
+		\end{block}
+	\end{columns}
+	
+	\pause
+	
+	\centering
+	\includegraphics[width=0.95\textwidth]{figs/methods/patterns.pdf}
+\end{frame}
+
+
+
+\begin{frame}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{figs/methods/radar.png}
+		
+		\column{0.5\textwidth}
+		\begin{itemize}
+		\item 380 KDTs (targeted by 679 drugs) have direct influence over the whole or partial parts of the map.
+		\item The GO biological processes enriched are mostly related to immune activity (T-cell, inflammatory response)
+		\item The COVID-19 Hallmarks are represented.
+	\end{itemize}
+	\end{columns}
+\end{frame}
+
 
 
 \section{Results}
