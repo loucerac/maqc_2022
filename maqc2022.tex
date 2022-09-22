@@ -357,7 +357,23 @@
 \end{frame}
 
 \begin{frame}{ML pipeline}
+		Our \textbf{FS} model makes decissions based on the \textbf{SHAP} ranks\\
 
+		We want to be \textbf{true to the data}
+		\begin{itemize}
+			\item Avoid overconfidence
+			\item Draw from a background distribution
+			\item Compute the explanations using a different subset
+		\end{itemize}
+		(Remember) We need an unbiased circuit-based $\rtwo^2$ scoring system
+
+		\begin{figure}
+		\centering\includegraphics[width=0.8\textwidth]{figs/methods/val.pdf}
+		\end{figure}
+
+		(Nogueira) Build a population (repeat the whole procedure \textbf{100 times})
+
+		Make it faster: \textbf{GPU-CUDA}
 \end{frame}
 
 
@@ -583,13 +599,19 @@
 
 \begin{frame}{Simvastatin summary}
 
-		\begin{figure}
-			\includegraphics[width=0.8\textwidth]{figs/results/simvastatin_summary_.png}	
-		\end{figure}
+	\begin{figure}
+		\includegraphics[width=0.8\textwidth]{figs/results/simvastatin_summary_.png}	
+	\end{figure}
 		
+	\begin{columns}
+		\column{0.5\textwidth}
+			
 		\begin{figure}
-			\includegraphics[width=0.4\textwidth]{figs/results/db00641_simvastatin_lymphocite_progression.pdf}	
+			\includegraphics[width=0.9\textwidth]{figs/results/db00641_simvastatin_lymphocite_progression.pdf}	
 		\end{figure}
+		\column{0.5\textwidth}
+
+	\end{columns}
 
 \end{frame}
 
