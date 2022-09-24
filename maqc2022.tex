@@ -1,7 +1,7 @@
 % !TeX encoding = UTF-8
 % !TeX spellcheck = en_US
 
-\documentclass[compress,ignorenonframetext,aspectratio=1610,handout]{beamer}
+\documentclass[compress,ignorenonframetext,aspectratio=1610]{beamer}
 \usepackage[USenglish]{babel}
 \usepackage[utf8]{inputenc}
 \usetheme{Cantabria}
@@ -189,11 +189,12 @@
 \title[Drug repurposing for COVID-19 with Real World Evidence]{Drug repurposing for COVID-19 using explainable machine learning and mechanistic models of signal transduction circuits related to SARS-CoV-2 infection with real world data validation}
 \author{Carlos Loucera}
 \institute{
-	Bioinformatics Area, Andalusian Public Foundation Progress and Health-FPS, 41013 Sevilla, Spain \\
-	Institute of Biomedicine of Seville, IBiS, University Hospital Virgen del Rocío/CSIC/University of Seville, 41013 Sevilla, Spain
+	Bioinformatics Area, Andalusian Public Foundation Progress and Health-FPS \\
+	Institute of Biomedicine of Seville, IBiS, University Hospital Virgen del Rocío/CSIC/University of Seville\\
+	41013 Sevilla, Spain
 }
 \date{
-	MAQC 2022 \\ 
+	FDA/NCTR-MAQC 2022 Conference\\ 
 	2022 September 26}
 
 \setbeamertemplate{frametitle}[default][center]
@@ -333,15 +334,27 @@
 			\end{figure}
 		\end{column}
 	\end{columns}
+	\vspace*{2em}
 
 	\pause
+	\begin{columns}
+		\begin{column}{0.8\textwidth}
 
-	\vspace*{2em}
-	{\normalsize
-		\[
-			S_{n} = v_{n} \left( 1 - \prod_{s_{a} \in \mathcal{A}} \left( 1 - s_{a} \right) \right) \prod_{s_{i} \in \mathcal{I}} \left( 1 - s_{i} \right)
-		\]
-	}
+		{\normalsize
+			\[
+				S_{n} = v_{n} \left( 1 - \prod_{s_{a} \in \mathcal{A}} \left( 1 - s_{a} \right) \right) \prod_{s_{i} \in \mathcal{I}} \left( 1 - s_{i} \right)
+			\]
+		}
+	\end{column}
+	\begin{column}{0.2\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.5\textwidth]{figs/logos/hipathia_icon.pdf}
+		\end{figure}
+	\end{column}
+\end{columns}
+
+
 \end{frame}
 
 
@@ -432,9 +445,9 @@
 		\begin{block}{SHapley Additive exPlanations}
 				Fair feature responsibility attribution.
 				
-				Dis-aggregated by circuit by construction.
+				Dis-aggregated by circuit by construction
 				
-				Additive (use biologically-relevant groups).
+				Additive (use biologically-relevant groups)
 		\end{block}
 	
 		\column{0.5\textwidth}
@@ -465,9 +478,11 @@
 		
 		\column{0.5\textwidth}
 		\begin{itemize}
-		\item 380 KDTs (targeted by 679 drugs) have direct influence over the whole or partial parts of the map.
+		\item 380 KDTs (targeted by 679 drugs) have direct influence over the whole or partial parts of the map
+		\vspace*{1em}
 		\item The GO biological processes enriched are mostly related to immune activity (T-cell, inflammatory response)
-		\item The COVID-19 Hallmarks are represented.
+		\vspace*{1em}
+		\item The COVID-19 Hallmarks are represented
 	\end{itemize}
 	\end{columns}
 \end{frame}
@@ -577,7 +592,7 @@
 
 \begin{frame}{Conclusions}
 
-	\textbf{Bemiparinand} and \textbf{Enoxaparin} \textrightarrow Highest survival
+	\textbf{Bemiparin} and \textbf{Enoxaparin} \textrightarrow Highest survival
 	\begin{itemize}
 		\item prevent thrombotic and thromboembolic complications
 		\item enoxaparin has been previously reported as protective
@@ -586,7 +601,7 @@
 
 	\textbf{Calcifediol} and \textbf{Cholecalciferol} have a protective effect
 	\begin{itemize}
-		\item probably due to vitamin D and its pro-immune and anti-inflammatory properties.
+		\item probably due to vitamin D and its pro-immune and anti-inflammatory properties2
 	\end{itemize}
 
 	There is a \textbf{significative intersection} between \textbf{ML predicted drugs} and \textbf{RWE}
@@ -611,7 +626,7 @@
 		\column{0.5\textwidth}
 
 		Pleiotropic effect\\
-		antiinflammatory and antithrombotic\\
+		anti-inflammatory and anti-thrombotic\\
 		inhibiting the NF-Kβ pathway\\
 		directly reduces inflammatory cytokines (IL1, IL6, TNF-\textalpha), CRP, and neutrophils\\
 		Under heavy study
@@ -631,9 +646,9 @@
 		\item if they \textit{look for a needle in a haystack}
 		\item help them by
 		\begin{itemize}
-			\item removing stacks of hay
-			\item prioritize what remains
-			\item with biology-driven constrains and explanations
+			\item (\textbf{filter}) removing stacks of hay
+			\item \textbf{prioritize} what remains
+			\item with \textbf{biology-driven constrains} and \textbf{explanations}
 		\end{itemize}
 	\end{itemize}
 
@@ -644,18 +659,52 @@
 		\item predictive performance is not enough
 	\end{itemize}
 
+	\begin{block}
+	{BPS, the database for secondary use of clinical data of the Andalusian Public Health System, constitutes a unique resource for large-scale RWE studies}
+	\end{block}
+
 \end{frame}
 
 
 
 \section{Thanks}
 
-	\begin{frame}{}
-		\begin{center}
-			{\fontsize{40}{50}\selectfont Thank You!}
-		\end{center}
-	\end{frame}
+	\begin{frame}{The team}
 
+		\begin{columns}
+			\begin{column}{0.6\textwidth}
+				\begin{figure}
+					\includegraphics[width=0.99\textwidth]{figs/people/funding_rd.png}	
+				\end{figure}
+			\end{column}
+
+			\begin{column}{0.2\textwidth}
+				\begin{figure}
+					\includegraphics[width=0.7\textwidth]{figs/people/ruben_pc200.jpg}	
+				\end{figure}
+				\begin{figure}
+					\includegraphics[width=0.7\textwidth]{figs/people/gerrit.jpeg}	
+				\end{figure}
+			\end{column}
+		\end{columns}
+		
+		\begin{columns}
+			\begin{column}{0.6\textwidth}
+
+			\begin{figure}
+				\includegraphics[width=0.99\textwidth]{figs/people/funding_sarsvoc2.png}	
+			\end{figure}
+			\end{column}
+
+			\begin{column}{0.2\textwidth}
+
+				\begin{figure}
+					\includegraphics[width=0.7\textwidth]{figs/logos/bps.png}
+				\end{figure}	
+			\end{column}
+
+		\end{columns}
+	\end{frame}
 
 	\begin{frame}{Personal funding. Contact: \url{carlos.loucera@juntadeandalucia.es}}
 
@@ -679,5 +728,12 @@
 		\vspace*{-1pt}
 		\makebox[\linewidth]{\includegraphics[page=1,width=0.65\paperwidth]{figs/people/fps_final_slide.pdf}}
 	\end{frame}
+
+	\begin{frame}{}
+		\begin{center}
+			{\fontsize{40}{50}\selectfont Thank You!}
+		\end{center}
+	\end{frame}
+
 
 \end{document}
